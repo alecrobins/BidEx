@@ -9,9 +9,10 @@ BidEx Database File
 		->title(varchar(30))
 		->imgPath(varchar(50))
 		->description(text)
-		->startTime(dateTime)
-		->endTime(dateTime)
+		->startTime(dateTime YYYY-MM-DD HH-MM-SS)
+		->endTime(dateTime YYYY-MM-DD HH-MM-SS)
 		->comments(text)
+		->*currentCost(smallint(10))
 	bid
 		->key(Auto increment)
 		->bidTime (dateTime YYYY-MM-DD HH-MM-SS)
@@ -23,8 +24,8 @@ Initial saved values for examples:
 	members
 		-> key, id, password, profilePic INTO (1, admin, admin, /img/profilePic/admin_0)
 	deals
-		-> key, title, imgPath, description, startTime, endTime, comments INTO (1, Test Bid, /img/deals/Test_Bid_0, 
+		-> key, title, imgPath, description, startTime, endTime, comments, currentCost INTO (1, Test Bid, /img/deals/Test_Bid_0, 
 																				This is a Test Description, 2015-03-22 00:00:00, 
-																				2015-03-22 23:50:00, This is a Test Comment)
+																				2015-03-22 23:50:00, This is a Test Comment, 10000	)
 	bid
 		-> key, bidTime, amount INTO (1, 2015-03-22 15:42:17, 1000)

@@ -42,15 +42,16 @@ CREATE TABLE IF NOT EXISTS `deals` (
   `description` text NOT NULL,
   `startTime` datetime NOT NULL,
   `endTime` datetime NOT NULL,
-  `comments` text NOT NULL
+  `comments` text NOT NULL,
+  `currentCost` smallint(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='Database for Items that are on auction';
 
 --
 -- Insert Initial Test Value to `deals`
 --
 
-INSERT INTO `deals` (`key`, `title`, `imgPath`, `description`, `startTime`, `endTime`, `comments`) VALUES
-(1, 'Test Bid', '/img/deals/Test_Bid_0', 'This is a Test Description', '2015-03-22 00:00:00', '2015-03-22 23:50:00', 'This is a Test Comment');
+INSERT INTO `deals` (`key`, `title`, `imgPath`, `description`, `startTime`, `endTime`, `comments`, `currentCost`) VALUES
+(1, 'Test Bid', '/img/deals/Test_Bid_0', 'This is a Test Description', '2015-03-22 00:00:00', '2015-03-22 23:50:00', 'This is a Test Comment', 10000);
 
 -- --------------------------------------------------------
 
