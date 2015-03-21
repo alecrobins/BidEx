@@ -1,26 +1,25 @@
 <div class="item-feature">
 
 	<div class="item-picture">
-		<img ng-src="{{item.feature-image}}" alt="" />
+		<img ng-src="{{item.featureImage}}" alt="" />
 	</div>
-
 	<div class="item-into">
-		<h2 class="title">{{item.title}}</h2>
+		<h2 class="title">{{itemTitle}}</h2>
 
 		<div class="item-info-bid">
 			<table>
 				<tr>
 					<td>
-						<h1 class="bid">{{item.current-bid}}</h1>
+						<h1 class="bid">{{item.currentBid}}</h1>
 					</td>
 					<td>
-						<button class="bid-button" ng-click="bid-placed()">
+						<button class="bid-button" ng-click="bidPlaced()">
 							BID <br />
-							+ {{item.bid-inc}}
+							+ {{item.bidInc}}
 						</button>
 					</td>
 				</tr>
-				<!--Second row-->
+				Second row
 				<tr>
 					<td>TOP BID</td>
 					<td></td>
@@ -33,12 +32,12 @@
 
 			<table>
 				<tr>
-					<!--TODO: Need to add a count down from the end date-->
-					<td class="item-remaining-time">{{item.remaining-time}}</td>
-					<td class="item-bid-amount">{{item.bid-amount}}</td>
+					TODO: Need to add a count down from the end date
+					<td class="item-remaining-time">{{item.remainingTime}}</td>
+					<td class="item-bid-amount">{{item.currentBid}}</td>
 					<td class="item-top-bidder">
-						<img ng-src="{{item.top-bidder.profile}}" alt="" />
-						{{item.top-bidder.username}}
+						<img ng-src="{{item.topBidder.profile}}" alt="" />
+						{{item.topBidder.username}}
 					</td>
 				</tr>
 				<tr class="item-info">
@@ -56,16 +55,16 @@
 <div class="item-bottom">
 	<div class="discussion">
 		<h2 class="subheader">Discussion</h2>
-		<!-- Loop through all the comments of the discussion in the current item-->
-		<!-- TODO: set item.discussion to $scope.discussion -->
-		<div ng-repeat="comment in comments" class="comment-container">
+		Loop through all the comments of the discussion in the current item
+		TODO: set item.discussion to $scope.discussion
+		<div ng-repeat="comment in item.comments" class="comment-container">
 				<div class="comment-left">
 						<table>
 							<tr>
-								<td> <img ng-src="{{item.top-bidder.profile}}" alt="" /> </td>
+								<td> <img ng-src="{{item.topBidder.profile}}" alt="" /> </td>
 								<td>
 									@{{comment.user.username}} <br />
-									{{comment.user.bid-amount}}
+									{{comment.user.bidAmount}}
 								</td>
 							</tr>
 						</table>
@@ -73,20 +72,20 @@
 				<div class="comment-right">
 					{{comment.text}}
 				</div>
-    </div><!--End of individual comment -->
+    </div>End of individual comment
 
-	</div> <!-- End of discussion -->
+	</div> End of discussion
 
 	<div class="bid-history">
 		<table>
 			<th class="subheader"><h1>Bid History</h1></th>
-			<!--TODO: need to set item.bid-history to $scope.bid-history-->
-			<tr ng-repeat="bid in bid-history" >
+			<!-- TODO: need to set item.bid-history to $scope.bid-history -->
+			<tr ng-repeat="bid in item.bidHistory" >
 				<td><img ng-src="{{bid.user.profile}}" alt="" /></td>
 				<td class="username">@{{bid.user.username}}</td>
-				<td class="bid-amount">{{bid.bid-amount}}</td>
+				<td class="bid-amount">{{bid.bidAmount}}</td>
 			</tr>
 		</table>
-	</div><!-- End of bid-history-->
+	</div>End of bid-history
 
 </div>
