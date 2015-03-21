@@ -1,8 +1,19 @@
 'use strict';
 
-var navController = angular.module("app").controller('NavController', ['$scope',
-function ($scope) {
+var navController = angular.module("app").controller('NavController', ['$scope', '$location',
+function ($scope, $location) {
 
-		$scope.test = "Hello World - nav";
+		//User Functions
+
+		$scope.logOut = function () {
+		};
+
+		$scope.getLogos = function () {
+		}
+
+		//nav links
+		$scope.gotoFeed = function () {
+				$location.path("/feed");
+		};
 
 }]);

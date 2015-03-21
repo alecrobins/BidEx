@@ -49,7 +49,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
 
         .otherwise({
-            redirectTo: '/feed',
+            redirectTo: '/login',
         });
 
 

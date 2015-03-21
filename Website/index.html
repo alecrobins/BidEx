@@ -6,6 +6,8 @@
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:900,500,100,300,700,400' rel='stylesheet' type='text/css'>
+    <!-- Main style sheet -->
+    <link href="Style/index.css" rel="stylesheet" />
 
 </head>
     <body>
@@ -13,9 +15,17 @@
 			  <!--navbar - NavController resposible for the following content-->
         <div id="myNav" role="navigation" ng-controller="NavController">
 						<div id="navContainer">
-								<h1>BidEx</h1>
 
-								{{test}}
+              <div id="logo">
+                <img src="Assets/Images/logo-square.png" alt="Main Logo">
+                <h1>BidEx</h1>
+              </div>
+
+              <div id="links">
+                <ul>
+                  <li><a ng-click="gotoFeed()">feed</a></li>
+                </ul>
+              </div>
 
 						</div>
 	      </div>

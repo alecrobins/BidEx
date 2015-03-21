@@ -1,0 +1,27 @@
+#navContainer {
+  height: 90px;
+  background: #f7f7f7;
+  padding: 10px 20px; }
+  #navContainer #logo {
+    float: left; }
+  #navContainer #logo img {
+    float: left;
+    width: 80px; }
+  #navContainer #logo h1 {
+    font-style: italic;
+    font-weight: 900;
+    font-size: 3.5em;
+    color: #3bf779;
+    display: block;
+    margin: auto 10px;
+    float: left; }
+  #navContainer #links {
+    float: right; }
+    #navContainer #links ul li a {
+      display: block;
+      float: left;
+      padding: 10px;
+      color: #323232;
+      font-size: 1.5em;
+      font-weight: 500;
+      text-decoration: none; }
