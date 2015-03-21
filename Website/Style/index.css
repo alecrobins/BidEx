@@ -244,6 +244,14 @@ table {
 #feed-item:hover {
   background: rgba(59, 247, 121, 0.2); }
 
+.login-left {
+  width: 50%;
+  float: left; }
+
+.login-right {
+  width: 50%;
+  float: right; }
+
 * {
   font-family: "Roboto", sans-serif !important;
   font-weight: 400; }

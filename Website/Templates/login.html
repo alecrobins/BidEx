@@ -1,1 +1,27 @@
-<h1>Log in screen . . .  </h1>
+<div class="login-left">
+	<h1>Create an account</h1>
+
+	<form novalidate class="signup-form">
+		Username: <input type="text" ng-model="newUser.name" /><br />
+    Password: <input type="password" ng-model="newUser.password" /><br />
+    Email: <input type="email" ng-model="newUser.email" /><br />
+		<!--TODO: need to add the ability to sign in with facebook/twitter -->
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="create(newUser)" value="Save" />
+  </form>
+
+</div>
+
+<div class="login-right">
+
+	<h1>Sign in</h1>
+
+	<form novalidate class="signup-form">
+    Username: <input type="text" ng-model="user.name" /><br />
+		Password: <input type="password" ng-model="user.password" /><br />
+    <input type="submit" ng-click="signin(newUser)" value="Sign in" />
+  </form>
+
+</div>
+
+<div class="clear"></div>
