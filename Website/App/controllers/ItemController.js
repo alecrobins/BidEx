@@ -40,7 +40,7 @@ function ($scope, $route, $routeParams, itemService, loginService, discussionSer
 		$scope.addComment = function () {
 			console.log("COMMENT :: ");
 			console.log($scope.currentComment);
-			discussionService.addComment($scope.currentUser, $scope.currentComment);
+			discussionService.addComment($scope.currentUser, $scope.currentComment, $scope.item);
 
 			// reset
 			$scope.currentComment = "";
