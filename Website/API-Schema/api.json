@@ -65,6 +65,12 @@ POST /api/login/:username/:password
 	success: "yes or no"
 }
 
+POST /api/addComment/:userId/:itemId/:text
+-> send a comment to be added to the discussion
+{
+	success: "yes or no"
+}
+
 POST /api/create/:username/:password
 -> create a user
 {

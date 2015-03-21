@@ -35,7 +35,7 @@
 				<tr>
 					<!-- TODO: Need to add a count down from the end date -->
 					<td class="item-remaining-time">
-						<timer end-time="currentEndingTime">{{hours}}h:{{minutes}}m:{{seconds}}s</timer>
+						<timer end-time="currentEndingTime">{{hours}}:{{minutes}}:{{seconds}}</timer>
 					</td>
 					<td class="item-bid-amount">{{item.numOfBidders}}</td>
 					<td class="item-top-bidder">
@@ -72,8 +72,8 @@
 							{{currentUser.bidAmount}}
 						</td>
 						<td class="comment-textarea">
-							<button id="add-comment"> + </button>
-							<textarea name="comment" placeholder="Write here . . ." rows="3"></textarea>
+							<button id="add-comment" ng-click="addComment()"> + </button>
+							<textarea name="comment" placeholder="Write here . . ." rows="3" ng-model="currentComment"></textarea>
 						</td>
 					</tr>
 				</table>
@@ -83,7 +83,7 @@
 		<div  class="comment-container">
 				<table>
 					<tr class="comment-row" ng-repeat="comment in item.comments">
-						<td class="comment-username"> <img ng-src="{{item.topBidder.profile}}" alt="" /> </td>
+						<td class="comment-username"> <img ng-src="{{comment.user.profile}}" alt="" /> </td>
 						<td class="comment-username">
 							@{{comment.user.username}} <br />
 							{{comment.user.bidAmount}}

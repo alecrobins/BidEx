@@ -1,11 +1,13 @@
 'use strict';
 
-var itemController = angular.module("app").controller('ItemController', ['$scope', '$route', '$routeParams', 'itemService', 'loginService',
-function ($scope, $route, $routeParams, itemService, loginService) {
+var itemController = angular.module("app").controller('ItemController', ['$scope', '$route', '$routeParams', 'itemService', 'loginService', 'discussionService',
+function ($scope, $route, $routeParams, itemService, loginService, discussionService) {
 
 		$scope.test = "Hello World - item";
 
 		$scope.item = $route.current.locals.getItemById;
+
+		$scope.currentComment = "";
 
 		$scope.currentUser = loginService.getCurrentUser();
 
@@ -35,8 +37,18 @@ function ($scope, $route, $routeParams, itemService, loginService) {
 
 		$scope.currentEndingTime = 	$scope.item.endTime;
 
+		$scope.addComment = function () {
+			console.log("COMMENT :: ");
+			console.log($scope.currentComment);
+			discussionService.addComment($scope.currentUser, $scope.currentComment);
+
+			// reset
+			$scope.currentComment = "";
+		}
+
 }]);
 
+// Responses
 itemController.getItemById = function($q, $timeout, $route, itemService){
 	var deferred = $q.defer();
 	var itemItd = $route.current.params.id;

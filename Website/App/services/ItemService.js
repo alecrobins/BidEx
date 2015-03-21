@@ -63,7 +63,7 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 			"currentBid": 200,
 			"endTime":  new Date(2015, 12, 1, 3, 25, 0).getTime(),
 			"remainingTime": "0:59", // TODO: NEED TO REMOVE,
-			"bidInc": 100,
+			"bidInc": 50,
 			"numOfBidders": 32,
 			"topBidder": {
 				"username": "alecrobins",
@@ -186,31 +186,39 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 		// TODO: need to implement when API is up
 		// Returns a promise of the item looked up with its id
 		// return $http.get(base_url + '/placeBid/' + item.id + '/' + user.id);
+			//DUMMY
+			if(item.id == 1){
+				console.log("BEFORE BID");
+				console.log(items[0].currentBid);
+				items[0].currentBid += items[0].bidInc;
+				console.log("AFTER BID");
+				console.log(items[0].currentBid);
+				return true;
+			}
+			else if(item.id == 2){
+				console.log("BEFORE BID");
+				console.log(items[1].currentBid);
+				items[1].currentBid += items[1].bidInc;
+				console.log("AFTER BID");
+				console.log(items[1].currentBid);
+				return true;
+			}
+			else{
+				console.log("BIG ERROR");
+				return false
+			}
 
-		//DUMMY
-		if(item.id == 1){
-			console.log("BEFORE BID");
-			console.log(items[0].currentBid);
-			items[0].currentBid += items[0].bidInc;
-			console.log("AFTER BID");
-			console.log(items[0].currentBid);
-			return true;
-		}
-		else if(item.id == 2){
-			console.log("BEFORE BID");
-			console.log(items[1].currentBid);
-			items[1].currentBid += items[1].bidInc;
-			console.log("AFTER BID");
-			console.log(items[1].currentBid);
-			return true;
-		}
-		else{
-			console.log("BIG ERROR");
-			return false
-		}
+	}
 
-
-
+	this.addComment = function (user, text) {
+		currentItem.comments.unshift({
+			"user": {
+				"username": user.username,
+				"bidAmount": user.bidAmount,
+				"profile": user.profile
+				},
+			"text": text
+		});
 	}
 
 
