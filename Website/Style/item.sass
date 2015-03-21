@@ -1,0 +1,178 @@
+// Style for specific items . . .
+$main-grey: rgb(25,25,25)
+$main-green: rgb(59,247,121)
+$main-green-alpha: rgba(59,247,121,0.5)
+$main-red: rgb(233,82,82)
+
+.item-feature
+	width: 100%
+	position: relative
+	// background: yellow
+	.item-picture
+		float: left
+		width: 50%
+		// background: green
+		min-height: 100%
+		position: relative
+		img
+			width: 100%
+	.item-info
+		float: right
+		width: 45%
+		// background: purple
+		min-height: 100%
+		padding: 0 2.5%
+		h2.title
+			color: $main-grey
+			font-size: 2.5em
+			font-weight: 600
+			display: block
+
+.item-info-bid
+	table
+		width: 100%
+		margin-top: 2.5%
+		h1.bid
+			color: $main-green
+			font-size: 10vw
+			font-weight: 700
+		.bit-button
+			vertical-align: middle
+		.bid-button button
+			-webkit-border-radius: 15px 15px 15px 15px
+			border-radius: 15px 15px 15px 15px
+			border: none
+			padding: 20px
+			background: $main-green
+			color: white
+			font-size: 1.5em
+			font-weight: 500
+			width: 100%
+
+.item-info-details
+	table
+		margin-top: 2.5%
+		width: 100%
+		td
+			padding: 2px 15px
+		.item-remaining-time
+			width: 20%
+			color: $main-red
+			font-size: 2em
+			font-weight: 500
+			text-align: center
+			vertical-align: middle
+		.item-bid-amount
+			width: 20%
+			color: $main-grey
+			font-size: 2em
+			font-weight: 500
+			text-align: center
+			vertical-align: middle
+		.item-top-bidder
+			width: 60%
+			color: $main-grey
+			font-size: 2em
+			font-weight: 500
+			text-align: left
+			vertical-align: middle
+			img
+				float: left
+				margin-right: 10px
+			p
+				display: block
+
+.item-bottom
+	border-top: solid 1px rgb(247,247,247)
+	margin-top: 10px
+	padding-top: 10px
+	.discussion
+		width: 70%
+		float: left
+	.add-comment
+		border-bottom: solid 1px rgb(247,247,247)
+		padding-bottom: 10px
+		table
+			width: 100%
+
+.comment-username
+	font-size: 1em
+	font-weight: 700
+	vertical-align: top
+
+.comment-row
+	border-bottom: solid 1px rgb(247,247,247)
+	td
+		padding: 20px 0
+
+.comment-text
+	width: 70%
+	font-weight: 300
+	line-height: 1.75em
+	font-size: 1em
+	vertical-align: top
+
+.comment-textarea
+	width: 70%
+	position: relative
+	vertical-align: top
+	button
+		position: absolute
+		right: 7%
+		top: 10px
+		background: $main-green-alpha
+		border: none
+		-webkit-border-radius: 25px
+		border-radius: 25px
+		display: block
+		width: 25px
+		height: 25px
+		font-size: 1em
+		color: white
+		font-weight: 500
+		text-align: center
+		vertical-align: middle
+	button:focus
+		outline: none !important
+	textarea
+		width: 90%
+		padding: 10px
+		border: solid 1px rgb(240,240,240)
+		-webkit-border-radius: 15px 15px 15px 15px
+		border-radius: 15px 15px 15px 15px
+		font-size: 1em
+		min-height: 30px
+		background: rgb(245,245,245)
+		resize: none
+	textarea:focus
+		border: solid 1px $main-green
+		outline: none !important
+		-webkit-border-radius: 15px 15px 15px 15px
+		border-radius: 15px 15px 15px 15px
+		background: rgb(247,247,247)
+
+// Cell alignment
+.center-cell
+	text-align: center
+	font-size: 0.75em
+	font-weight: 700
+
+.left-cell
+	text-align: left
+	font-size: 0.75em
+	font-weight: 700
+
+.subheader
+	font-weight: 700
+	font-size: 1.5em
+	padding-bottom: 10px
+	display: block
+
+.bid-history
+	width: 30%
+	float: right
+	table
+		width: 100%
+	#bid-history-title
+		background: rgb(242,242,242)
+		width: 100%

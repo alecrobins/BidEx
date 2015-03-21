@@ -39,18 +39,18 @@ app.config(['$routeProvider', function ($routeProvider) {
             }
         })
 
-				// // route for the specific item page page
-				// // TODO: need to route the specific item (deal) id with this page
-        // .when('/item/:id', {
-        //     templateUrl: 'Templates/item.html',
-        //     controller: 'ItemController',
-        // })
-        //
-				// // The completed page for an item
-        // .when('/item/:id/complete', {
-        //     templateUrl: 'Templates/item.html',
-        //     controller: 'ItemController',
-        // })
+				// route for the specific item page page
+				// TODO: need to route the specific item (deal) id with this page
+        .when('/item/:id', {
+            templateUrl: 'Templates/item.html',
+            controller: 'ItemController',
+        })
+
+				// The completed page for an item
+        .when('/item/:id/complete', {
+            templateUrl: 'Templates/item.html',
+            controller: 'ItemController',
+        })
 
         .otherwise({
             redirectTo: '/login',

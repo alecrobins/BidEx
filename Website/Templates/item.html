@@ -3,25 +3,26 @@
 	<div class="item-picture">
 		<img ng-src="{{item.featureImage}}" alt="" />
 	</div>
-	<div class="item-into">
-		<h2 class="title">{{itemTitle}}</h2>
+
+	<div class="item-info">
+		<h2 class="title">{{item.title}}</h2>
 
 		<div class="item-info-bid">
 			<table>
 				<tr>
 					<td>
-						<h1 class="bid">{{item.currentBid}}</h1>
+						<h1 class="bid">${{item.currentBid}}</h1>
 					</td>
-					<td>
-						<button class="bid-button" ng-click="bidPlaced()">
+					<td class="bid-button">
+						<button  ng-click="bidPlaced()">
 							BID <br />
 							+ {{item.bidInc}}
 						</button>
 					</td>
 				</tr>
-				Second row
+				<!-- Second row -->
 				<tr>
-					<td>TOP BID</td>
+					<td class="center-cell">TOP BID</td>
 					<td></td>
 				</tr>
 			</table>
@@ -32,60 +33,80 @@
 
 			<table>
 				<tr>
-					TODO: Need to add a count down from the end date
+					<!-- TODO: Need to add a count down from the end date -->
 					<td class="item-remaining-time">{{item.remainingTime}}</td>
 					<td class="item-bid-amount">{{item.currentBid}}</td>
 					<td class="item-top-bidder">
 						<img ng-src="{{item.topBidder.profile}}" alt="" />
-						{{item.topBidder.username}}
+						<p>{{item.topBidder.username}}</p>
 					</td>
 				</tr>
-				<tr class="item-info">
-					<td>TIME REMAINING</td>
-					<td># OF BIDDERS</td>
-					<td>TOP BIDDER</td>
+				<tr class="item-info-title">
+					<td class="center-cell">TIME LEFT</td>
+					<td class="center-cell">BIDDERS</td>
+					<td class="left-cell">TOP BIDDER</td>
 				</tr>
 			</table>
 
 		</div>
 
 
-</div><!-- End of item-featue -->
+	</div><!-- End of item-featue -->
+	<div class="clear"></div>
+
+</div>
 
 <div class="item-bottom">
 	<div class="discussion">
 		<h2 class="subheader">Discussion</h2>
-		Loop through all the comments of the discussion in the current item
-		TODO: set item.discussion to $scope.discussion
-		<div ng-repeat="comment in item.comments" class="comment-container">
-				<div class="comment-left">
-						<table>
-							<tr>
-								<td> <img ng-src="{{item.topBidder.profile}}" alt="" /> </td>
-								<td>
-									@{{comment.user.username}} <br />
-									{{comment.user.bidAmount}}
-								</td>
-							</tr>
-						</table>
-				</div>
-				<div class="comment-right">
-					{{comment.text}}
-				</div>
-    </div>End of individual comment
+	<!-- 	Loop through all the comments of the discussion in the current item -->
+		<!-- TODO: set item.discussion to $scope.discussion -->
+		<div class="add-comment">
+				<table>
+					<tr>
+						<td class="comment-username"><img ng-src="{{currentUser.profile}}" alt="" />	</td>
+						<td class="comment-username">
+							@{{currentUser.username}} <br />
+							{{currentUser.bidAmount}}
+						</td>
+						<td class="comment-textarea">
+							<button id="add-comment"> + </button>
+							<textarea name="comment" placeholder="Write here . . ." rows="3"></textarea>
+						</td>
+					</tr>
+				</table>
 
-	</div> End of discussion
+		</div>
+
+		<div  class="comment-container">
+				<table>
+					<tr class="comment-row" ng-repeat="comment in item.comments">
+						<td class="comment-username"> <img ng-src="{{item.topBidder.profile}}" alt="" /> </td>
+						<td class="comment-username">
+							@{{comment.user.username}} <br />
+							{{comment.user.bidAmount}}
+						</td>
+						<td class="comment-text">
+							{{comment.text}}
+						</td>
+					</tr>
+				</table>
+    </div><!-- End of individual comment -->
+
+	</div> <!-- End of discussion -->
 
 	<div class="bid-history">
 		<table>
-			<th class="subheader"><h1>Bid History</h1></th>
 			<!-- TODO: need to set item.bid-history to $scope.bid-history -->
+			<tr class="subheader" id="bid-history-title">
+		    <th colspan="3"><h1>Bid History</h1</th>
+		  </tr>
 			<tr ng-repeat="bid in item.bidHistory" >
 				<td><img ng-src="{{bid.user.profile}}" alt="" /></td>
 				<td class="username">@{{bid.user.username}}</td>
 				<td class="bid-amount">{{bid.bidAmount}}</td>
 			</tr>
 		</table>
-	</div>End of bid-history
+	</div><!-- End of bid-history -->
 
 </div>

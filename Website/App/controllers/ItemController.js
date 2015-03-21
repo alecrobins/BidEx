@@ -7,6 +7,12 @@ function ($scope, $route) {
 
 		$scope.item = $route.current.locals.getItem;
 
+		$scope.currentUser = {
+			"username": "userNumbe2",
+			"bidAmount": "",
+			"profile": "Assets/Images/pro2.png"
+		};
+
 }]);
 
 itemController.getItem = function ($q, $timeout) {
@@ -41,7 +47,7 @@ itemController.getItem = function ($q, $timeout) {
 				"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus lacus, viverra in pellentesque et, faucibu."
 			}
 		],
-		"bid-history": [
+		"bidHistory": [
 			{
 				"user": {
 					"username": "exampleUser",
