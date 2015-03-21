@@ -72,3 +72,9 @@ table {
 * {
   font-family: "Roboto", sans-serif !important;
   font-weight: 400; }
+
+.page-view {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: red;
+  padding-top: 20px; }
