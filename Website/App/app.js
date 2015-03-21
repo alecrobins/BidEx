@@ -8,7 +8,7 @@ factory('$logincheck', function () {
 });
 
 // Create the app
-var app = angular.module('arenaApp', ['LoginCheck', 'ngRoute', 'ngAnimate']);
+var app = angular.module('app', ['LoginCheck', 'ngRoute', 'ngAnimate']);
 
 // Configure the routes
 app.config(['$routeProvider', function ($routeProvider) {
