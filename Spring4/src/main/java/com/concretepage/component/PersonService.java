@@ -1,17 +1,25 @@
 package com.concretepage.component;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.concretepage.Person;
+import com.concretepage.dto.BidDTO;
+import com.concretepage.entities.Bid;
+import com.concretepage.repositories.BidRepositories;
 
 @Component
 public class PersonService implements IPersonService {
+
+	@Autowired
+	private BidRepositories bidRepositories;
+
 	@Override
-	public Person getPersonDetail(Integer id){
-		Person p = new Person();
-		p.setId(id);
-		p.setLocation("Varanasi");
-		p.setName("Ram");
+	public BidDTO getPersonDetail(Integer id) {
+		BidDTO p = new BidDTO();
+		Bid b = bidRepositories.getAllUsers().get(0);
+		p.setAmount(b.getAmount());
+		p.setBidTime(b.getBidTime());
+		p.setKey(b.getKey());
 		return p;
 	}
 }

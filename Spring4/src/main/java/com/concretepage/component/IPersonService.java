@@ -1,7 +1,7 @@
 package com.concretepage.component;
 
-import com.concretepage.Person;
+import com.concretepage.dto.BidDTO;
 
 public interface IPersonService {
-  public Person getPersonDetail(Integer id);
+  public BidDTO getPersonDetail(Integer id);
 }
