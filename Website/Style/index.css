@@ -41,18 +41,19 @@ table {
   border-spacing: 0; }
 
 #navContainer {
-  height: 90px;
+  height: 45px;
   background: #f7f7f7;
   padding: 10px 20px; }
   #navContainer #logo {
     float: left; }
   #navContainer #logo img {
     float: left;
-    width: 80px; }
+    width: 45px; }
   #navContainer #logo h1 {
     font-style: italic;
     font-weight: 900;
-    font-size: 3.5em;
+    font-size: 2.5em;
+    padding: 5px;
     color: #3bf779;
     display: block;
     margin: auto 10px;
@@ -234,6 +235,14 @@ table {
   .bid-history #bid-history-title {
     background: #f2f2f2;
     width: 100%; }
+
+#feed-item {
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: solid 1px #f0f0f0; }
+
+#feed-item:hover {
+  background: rgba(59, 247, 121, 0.2); }
 
 * {
   font-family: "Roboto", sans-serif !important;

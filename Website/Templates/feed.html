@@ -1,1 +1,57 @@
-<h1>FEED</h1>
+<div ng-repeat="item in items" class="item-feature" id="feed-item">
+
+	<div class="item-picture">
+		<img ng-src="{{item.featureImage}}" alt="" />
+	</div>
+
+	<div class="item-info">
+		<h2 class="title">{{item.title}}</h2>
+
+		<div class="item-info-bid">
+			<table>
+				<tr>
+					<td>
+						<h1 class="bid">${{item.currentBid}}</h1>
+					</td>
+					<td class="bid-button">
+						<button  ng-click="bidPlaced()">
+							BID <br />
+							+ {{item.bidInc}}
+						</button>
+					</td>
+				</tr>
+				<!-- Second row -->
+				<tr>
+					<td class="center-cell">TOP BID</td>
+					<td></td>
+				</tr>
+			</table>
+
+		</div>
+
+		<div class="item-info-details">
+
+			<table>
+				<tr>
+					<!-- TODO: Need to add a count down from the end date -->
+					<td class="item-remaining-time">{{item.remainingTime}}</td>
+					<td class="item-bid-amount">{{item.currentBid}}</td>
+					<td class="item-top-bidder">
+						<img ng-src="{{item.topBidder.profile}}" alt="" />
+						<p>{{item.topBidder.username}}</p>
+					</td>
+				</tr>
+				<tr class="item-info-title">
+					<td class="center-cell">TIME LEFT</td>
+					<td class="center-cell">BIDDERS</td>
+					<td class="left-cell">TOP BIDDER</td>
+				</tr>
+			</table>
+
+		</div>
+
+
+	</div><!-- End of item-featue -->
+	<div class="clear"></div>
+
+</div>

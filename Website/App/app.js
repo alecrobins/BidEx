@@ -28,6 +28,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/feed', {
             templateUrl: 'Templates/feed.html',
             controller: 'FeedController',
+            resolve: {
+              getItems: feedController.getItems
+            }
         })
 
 				// route for the item page

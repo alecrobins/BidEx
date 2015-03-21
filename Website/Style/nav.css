@@ -1,16 +1,17 @@
 #navContainer {
-  height: 90px;
+  height: 45px;
   background: #f7f7f7;
   padding: 10px 20px; }
   #navContainer #logo {
     float: left; }
   #navContainer #logo img {
     float: left;
-    width: 80px; }
+    width: 45px; }
   #navContainer #logo h1 {
     font-style: italic;
     font-weight: 900;
-    font-size: 3.5em;
+    font-size: 2.5em;
+    padding: 5px;
     color: #3bf779;
     display: block;
     margin: auto 10px;
