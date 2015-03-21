@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
 @Configuration
 public class RepositoryConfig {
@@ -39,21 +40,32 @@ public class RepositoryConfig {
 		ds.setPassword(password);
 		return ds;
 	}
-	
-	@Bean
+
 	@Autowired
-	public HibernateTransactionManager transactionManager (SessionFactory sessionFactory)
-	{
-		HibernateTransactionManager htm  = new HibernateTransactionManager();
+	@Bean
+	public HibernateTransactionManager transactionManager(
+			SessionFactory sessionFactory) {
+		HibernateTransactionManager htm = new HibernateTransactionManager();
 		htm.setSessionFactory(sessionFactory);
 		return htm;
 	}
-	
-	@Bean
+
 	@Autowired
-	public HibernateTemplate getHibernateTemplate(SessionFactory sessionFactory)
-	{
-		HibernateTemplate hibernateTemplate = new HibernateTemplate(sessionFactory);
+	@Bean
+	public HibernateTemplate getHibernateTemplate(SessionFactory sessionFactory) {
+		HibernateTemplate hibernateTemplate = new HibernateTemplate(
+				sessionFactory);
 		return hibernateTemplate;
+	}
+	
+	@Autowired
+	@Bean(name = "sessionFactory")
+	public SessionFactory getSessionFactory(DataSource dataSource) {
+	 
+	    LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
+	 
+	    sessionBuilder.scanPackages("com.concretepage.entities");
+	 
+	    return sessionBuilder.buildSessionFactory();
 	}
 }

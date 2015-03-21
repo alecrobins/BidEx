@@ -1,12 +1,25 @@
-package com.concretepage.config;  
-  
+package com.concretepage.config;
+
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-  
-@Configuration 
-@ComponentScan("com.concretepage") 
-@EnableWebMvc   
-public class AppConfig {  
 
-}  
+@Configuration
+@ComponentScan("com.concretepage")
+@Import({ RepositoryConfig.class })
+@EnableWebMvc
+@EnableTransactionManagement
+public class AppConfig {
+	@Bean
+	public PropertyPlaceholderConfigurer getPropertyPlaceholderConfigurer() {
+		PropertyPlaceholderConfigurer ppc = new PropertyPlaceholderConfigurer();
+		ppc.setLocation(new ClassPathResource("application.properties"));
+		ppc.setIgnoreUnresolvablePlaceholders(true);
+		return ppc;
+	}
+}
