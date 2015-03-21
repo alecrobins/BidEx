@@ -47,21 +47,21 @@
   .item-info-details table .item-remaining-time {
     width: 20%;
     color: #e95252;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
     text-align: center;
     vertical-align: middle; }
   .item-info-details table .item-bid-amount {
     width: 20%;
     color: #191919;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
     text-align: center;
     vertical-align: middle; }
   .item-info-details table .item-top-bidder {
     width: 60%;
     color: #191919;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
     text-align: left;
     vertical-align: middle; }

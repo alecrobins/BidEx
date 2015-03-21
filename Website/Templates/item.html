@@ -14,7 +14,7 @@
 						<h1 class="bid">${{item.currentBid}}</h1>
 					</td>
 					<td class="bid-button">
-						<button  ng-click="bidPlaced()">
+						<button  ng-click="placeBid()">
 							BID <br />
 							+ {{item.bidInc}}
 						</button>
@@ -34,8 +34,10 @@
 			<table>
 				<tr>
 					<!-- TODO: Need to add a count down from the end date -->
-					<td class="item-remaining-time">{{item.remainingTime}}</td>
-					<td class="item-bid-amount">{{item.currentBid}}</td>
+					<td class="item-remaining-time">
+						<timer end-time="currentEndingTime">{{hours}}h:{{minutes}}m:{{seconds}}s</timer>
+					</td>
+					<td class="item-bid-amount">{{item.numOfBidders}}</td>
 					<td class="item-top-bidder">
 						<img ng-src="{{item.topBidder.profile}}" alt="" />
 						<p>{{item.topBidder.username}}</p>

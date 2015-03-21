@@ -4,6 +4,18 @@ app.service('loginService', ['$q', '$http', '$rootScope', '$timeout', function (
 
 	var base_url = "http://someurl.com"
 
+	//TODO: need to dynamically install
+	var currentUser = {
+		"username": "userNumbe2",
+		"bidAmount": "",
+		"profile": "Assets/Images/pro2.png",
+		"id": 123
+	};
+
+	this.getCurrentUser = function () {
+		return currentUser;
+	}
+
 	this.createNewUser = function (newUser) {
 		console.log("Creating user . . .");
 
@@ -35,7 +47,7 @@ app.service('loginService', ['$q', '$http', '$rootScope', '$timeout', function (
 	}
 
 	this.isUserLoggedIn = function () {
-		return true; 
+		return true;
 	}
 
 }]);

@@ -1,11 +1,12 @@
-<div ng-repeat="item in items" class="item-feature" id="feed-item" ng-click="gotoItem(item.id)">
 
-	<div class="item-picture">
+<div ng-repeat="item in items" class="item-feature" id="feed-item" >
+
+	<div class="item-picture" ng-click="gotoItem(item.id)">
 		<img ng-src="{{item.featureImage}}" alt="" />
 	</div>
 
-	<div class="item-info">
-		<h2 class="title">{{item.title}}</h2>
+	<div class="item-info" >
+		<h2 class="title" ng-click="gotoItem(item.id)">{{item.title}}</h2>
 
 		<div class="item-info-bid">
 			<table>
@@ -14,7 +15,7 @@
 						<h1 class="bid">${{item.currentBid}}</h1>
 					</td>
 					<td class="bid-button">
-						<button  ng-click="bidPlaced()">
+						<button  ng-click="placeBid(item)">
 							BID <br />
 							+ ${{item.bidInc}}
 						</button>
@@ -34,8 +35,10 @@
 			<table>
 				<tr>
 					<!-- TODO: Need to add a count down from the end date -->
-					<td class="item-remaining-time">{{item.remainingTime}}</td>
-					<td class="item-bid-amount">{{item.currentBid}}</td>
+					<td class="item-remaining-time">
+						<timer end-time="endingTime">{{hours}}h:{{minutes}}m:{{seconds}}s</timer>
+					</td>
+					<td class="item-bid-amount">{{item.numOfBidders}}</td>
 					<td class="item-top-bidder">
 						<img ng-src="{{item.topBidder.profile}}" alt="" />
 						<p>{{item.topBidder.username}}</p>

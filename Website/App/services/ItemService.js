@@ -4,13 +4,16 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 
 	var currentItem = {};
 
+	var currentEndingTime = 0;
+
 	// Dummy items
 	var items = [{
 			"id": 1,
 			"title": "One Hour Conversation with Mark Zuckerburg",
 			"featureImage": "Assets/Images/filler.png",
 			"currentBid": 2300,
-			"endTime": "", // TODO: need to fill with a datetime
+			"numOfBidders": 12,
+			"endTime":  new Date(2015, 11, 17, 13, 24, 0).getTime(),
 			"remainingTime": "0:59", // TODO: NEED TO REMOVE,
 			"bidInc": 100,
 			"topBidder": {
@@ -56,11 +59,12 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 		{
 			"id": 2,
 			"title": "This is all about example number 2",
-			"featureImage": "Assets/Images/filler.png",
-			"currentBid": 2300,
-			"endTime": "", // TODO: need to fill with a datetime
+			"featureImage": "Assets/Images/filler2.png",
+			"currentBid": 200,
+			"endTime":  new Date(2015, 12, 1, 3, 25, 0).getTime(),
 			"remainingTime": "0:59", // TODO: NEED TO REMOVE,
 			"bidInc": 100,
+			"numOfBidders": 32,
 			"topBidder": {
 				"username": "alecrobins",
 				"profile": "Assets/Images/pro1.png"
@@ -109,6 +113,8 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 
 		var deferred = $q.defer();
 
+		//TODO: don't do an if statment - make a request each time
+		//TODO: consider returning just the promise (w/o succes/error)
 		// check if there are no items loaded
 		if (items == []){
 			// Returns a promise
@@ -126,6 +132,12 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 				console.log("RESOLVED . . .");
         return deferred.promise;
 		}
+	}
+
+	this.getCurrentEndingTime = function () {
+		console.log("CURRENT ENDING TIME");
+		console.log(currentEndingTime);
+		return currentEndingTime;
 	}
 
 	this.requestItemById = function (id) {
@@ -146,10 +158,12 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 			console.log("CHECKING ...");
 
 			//DUMMY
-			if(id == 1)
-				currentItem = items[0]
-			else if(id == 2)
-				currentItem = items[1]
+			if(id == 1){
+				currentItem = items[0];
+			}
+			else if(id == 2){
+				currentItem = items[1];
+			}
 			else
 				console.log("BIG ERROR");
 
@@ -162,14 +176,41 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 		return items;
 	}
 
-	this.getItem = function () {
-		console.log("Getting the item . . .");
-	}
-
 	this.getCurrentItem = function () {
 		console.log("Getting current item ");
 		console.log(currentItem);
 		return currentItem;
+	}
+
+	this.placeBid = function (item, user){
+		// TODO: need to implement when API is up
+		// Returns a promise of the item looked up with its id
+		// return $http.get(base_url + '/placeBid/' + item.id + '/' + user.id);
+
+		//DUMMY
+		if(item.id == 1){
+			console.log("BEFORE BID");
+			console.log(items[0].currentBid);
+			items[0].currentBid += items[0].bidInc;
+			console.log("AFTER BID");
+			console.log(items[0].currentBid);
+			return true;
+		}
+		else if(item.id == 2){
+			console.log("BEFORE BID");
+			console.log(items[1].currentBid);
+			items[1].currentBid += items[1].bidInc;
+			console.log("AFTER BID");
+			console.log(items[1].currentBid);
+			return true;
+		}
+		else{
+			console.log("BIG ERROR");
+			return false
+		}
+
+
+
 	}
 
 

@@ -8,7 +8,7 @@ factory('$logincheck', function () {
 });
 
 // Create the app
-var app = angular.module('app', ['LoginCheck', 'ngRoute', 'ngAnimate']);
+var app = angular.module('app', ['LoginCheck', 'ngRoute', 'ngAnimate', 'timer']);
 // var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
 // Configure the routes
@@ -33,15 +33,6 @@ app.config(['$routeProvider', function ($routeProvider) {
             }
         })
 
-				// route for the item page
-        .when('/item', {
-            templateUrl: 'Templates/item.html',
-            controller: 'ItemController',
-            resolve: {
-              getItem: itemController.getItem
-            }
-        })
-
 				// route for the specific item page page
 				// TODO: need to route the specific item (deal) id with this page
         .when('/item/:id', {
@@ -59,7 +50,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
 
         .otherwise({
-            redirectTo: '/login',
+            redirectTo: '/feed',
         });
 
 
