@@ -47,6 +47,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/item/:id', {
             templateUrl: 'Templates/item.html',
             controller: 'ItemController',
+            resolve: {
+              getItemById: itemController.getItemById
+            }
         })
 
 				// The completed page for an item

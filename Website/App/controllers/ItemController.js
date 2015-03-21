@@ -1,11 +1,11 @@
 'use strict';
 
-var itemController = angular.module("app").controller('ItemController', ['$scope', '$route',
-function ($scope, $route) {
+var itemController = angular.module("app").controller('ItemController', ['$scope', '$route', '$routeParams',
+function ($scope, $route, $routeParams) {
 
 		$scope.test = "Hello World - item";
 
-		$scope.item = $route.current.locals.getItem;
+		$scope.item = $route.current.locals.getItemById;
 
 		$scope.currentUser = {
 			"username": "userNumbe2",
@@ -14,6 +14,25 @@ function ($scope, $route) {
 		};
 
 }]);
+
+itemController.getItemById = function($q, $timeout, $route, itemService){
+	var deferred = $q.defer();
+	var itemItd = $route.current.params.id;
+	console.log("PARAM:");
+	console.log(itemItd);
+
+	// // to see if data has already been loaded
+	itemService.requestItemById(itemItd).then(
+		function() {
+				//get upcoming games
+				var item = itemService.getCurrentItem();
+				deferred.resolve(item);
+				console.log("item retrieved");
+		});
+
+		return deferred.promise;
+}
+
 
 itemController.getItem = function ($q, $timeout) {
   var deferred = $q.defer();

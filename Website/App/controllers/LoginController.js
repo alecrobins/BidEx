@@ -38,7 +38,7 @@ function ($scope, loginService) {
 	}
 
 	function checkIfLoggedIn() {
-		if(loginService.isUserLoggedIn)
+		if(loginService.isUserLoggedIn())
 			$location.path("/feed");
 		else
 			console.log("USER NOT LOGGED IN . .. "); // TODO: notify user

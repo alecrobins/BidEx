@@ -1,4 +1,4 @@
-<div ng-repeat="item in items" class="item-feature" id="feed-item">
+<div ng-repeat="item in items" class="item-feature" id="feed-item" ng-click="gotoItem(item.id)">
 
 	<div class="item-picture">
 		<img ng-src="{{item.featureImage}}" alt="" />

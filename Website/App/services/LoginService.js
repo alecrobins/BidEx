@@ -35,7 +35,7 @@ app.service('loginService', ['$q', '$http', '$rootScope', '$timeout', function (
 	}
 
 	this.isUserLoggedIn = function () {
-		return false; 
+		return true; 
 	}
 
 }]);
