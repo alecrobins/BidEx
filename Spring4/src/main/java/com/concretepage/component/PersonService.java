@@ -22,4 +22,12 @@ public class PersonService implements IPersonService {
 		p.setKey(b.getKey());
 		return p;
 	}
+
+	public void createBid() {
+		bidRepositories.createBid();
+	}
+
+	public String login(String id, String password) {
+		return bidRepositories.login(id, password);
+	}
 }
