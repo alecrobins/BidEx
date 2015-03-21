@@ -14,7 +14,10 @@
 			  <!--navbar - NavController resposible for the following content-->
         <div id="myNav" role="navigation" ng-controller="NavController">
 						<div id="navContainer">
+								<h1>BidEx</h1>
 
+								{{test}}
+								
 						</div>
 	      </div>
 
@@ -27,11 +30,22 @@
 				<script src="node_modules/angular-route/angular-route.js"></script>
 
         <!-- App -->
-        <script src="App/js/app.js"></script>
+        <script src="App/app.js"></script>
+
+				<!--Services-->
+				<script src="App/services/LoginService.js"></script>
+				<script src="App/services/ItemService.js"></script>
+				<script src="App/services/DiscussionService.js"></script>
+				<script src="App/services/PaymentService.js"></script>
+				<script src="App/services/FeedService.js"></script>
 
         <!-- Controllers -->
-				<script src="App/js/controllers/LoginController.js"></script>
-        <script src="App/js/controllers/LoginController.js"></script>
+				<script src="App/controllers/LoginController.js"></script>
+				<script src="App/controllers/FeedController.js"></script>
+				<script src="App/controllers/ItemController.js"></script>
+				<script src="App/controllers/NavController.js"></script>
+        <script src="App/controllers/CompleteController.js"></script>
+
 
     </body>
 </html>
