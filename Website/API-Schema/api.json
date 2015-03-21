@@ -1,0 +1,80 @@
+GET /api/deals
+-> Retrieve a list of all the availiabe deals
+-> Return me an object that contains an array of the deals
+
+{
+	deals: [
+		{
+			"id": int // deal id,
+			"title": string,
+			"featureImage": url to where image is located,
+			"currentTopBid": int
+			"numOfBidders": number of bidders,
+			"endTime": Date object of when the auction is up,
+			"bidInc": int // increment of the bid,
+			"topBidder": {
+				"username": string,
+				"profile": url to the location of the profile image
+			},
+			...
+		}]
+}
+
+GET /api/item/:id
+-> Retrieve the information of a deal based on its id
+-> Return me the JSON object that corresponds to the item id
+
+{
+		"id": int // deal id,
+		"title": string,
+		"featureImage": url to where image is located,
+		"currentTopBid": int,
+		"numOfBidders": number of bidders,
+		"endTime": Date object of when the auction is up,
+		"bidInc": int // increment of the bid,
+		"topBidder": {
+			"username": string,
+			"profile": url to the location of the profile image
+		},
+		"comments": [
+			{
+				"user": {
+					"username": string,
+					"bidAmount": int // amount of the latest user bid ammount
+					"profile": url to the location of the profile image
+				},
+				"text": string // the text of the actual comment
+			},
+			...
+		],
+		"bidHistory": [
+			{
+				"user": {
+					"username": string,
+					"bidAmount": int // amount the user has bidded,
+					"profile": url to the location of the profile image
+				},
+				...
+			}
+		]
+}
+
+POST /api/login/:username/:password
+-> Send back if successful or not
+{
+	success: "yes or no"
+}
+
+POST /api/create/:username/:password
+-> create a user
+{
+	success: "yes or no"
+}
+
+POST /api/placeBid/:userId/:itemId
+-> a user with the id userId is trying to place a bid on item
+{
+	success: "yes or no"
+}
+
+TODO: add a way to pass payments
