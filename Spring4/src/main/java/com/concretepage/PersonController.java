@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.concretepage.component.IPersonService;
 import com.concretepage.dto.BidDTO;
+import com.concretepage.dto.CardDTO;
 import com.concretepage.dto.LoginDTO;
+import com.concretepage.dto.TokenDTO;
 
 @RestController
 @RequestMapping("/data")
@@ -34,6 +36,17 @@ public class PersonController {
 		LoginDTO loginDTORet = new LoginDTO();
 		loginDTORet.setSuccess(personService.login(loginDTOIn.getId(),
 				loginDTOIn.getPassword()));
+		return loginDTORet;
+	}
+
+	@RequestMapping(value = "/chargeToken", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	public LoginDTO chargeToken(@RequestBody TokenDTO tokenDTO) {
+		LoginDTO loginDTORet = new LoginDTO();
+		try {
+			loginDTORet.setSuccess(personService.chargeToken(tokenDTO));
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 		return loginDTORet;
 	}
 }
