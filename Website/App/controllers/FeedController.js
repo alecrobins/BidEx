@@ -34,7 +34,7 @@ function ($scope, $route, $location, loginService, itemService) {
 			// 			});
 		}
 
-		$scope.endingTime = 1451628000000;
+		$scope.endingTime = $scope.items[0].endTime;
 
 }]);
 

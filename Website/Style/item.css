@@ -13,18 +13,25 @@
     width: 45%;
     min-height: 100%;
     padding: 0 2.5%; }
+    .item-feature .item-info a {
+      text-decoration: none; }
     .item-feature .item-info h2.title {
       color: #191919;
       font-size: 2.5em;
       font-weight: 600;
       display: block; }
 
+#feed-item .item-info h2.title:hover {
+  cursor: pointer; }
+#feed-item .item-picture img:hover {
+  cursor: pointer; }
+
 .item-info-bid table {
   width: 100%;
   margin-top: 2.5%; }
   .item-info-bid table h1.bid {
     color: #3bf779;
-    font-size: 10vw;
+    font-size: 8vw;
     font-weight: 700; }
   .item-info-bid table .bit-button {
     vertical-align: middle; }
@@ -38,6 +45,8 @@
     font-size: 1.5em;
     font-weight: 500;
     width: 100%; }
+  .item-info-bid table .bid-button button:hover {
+    background: rgba(59, 247, 121, 0.5); }
 
 .item-info-details table {
   margin-top: 2.5%;
@@ -164,3 +173,25 @@
   .bid-history #bid-history-title {
     background: #f2f2f2;
     width: 100%; }
+
+.bid-history-title {
+  width: 90%;
+  background: #f0f0f0;
+  padding: 5% 5% 0% 5%; }
+
+.bid-history table {
+  width: 100%; }
+.bid-history tbody tr {
+  background-color: whitesmoke; }
+.bid-history tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; }
+.bid-history td {
+  padding: 10px; }
+
+.payment-hide {
+  display: none;
+  opacity: 0; }
+
+.payment-show {
+  display: block;
+  opacity: 1; }

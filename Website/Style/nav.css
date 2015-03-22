@@ -26,3 +26,6 @@
       font-size: 1.5em;
       font-weight: 500;
       text-decoration: none; }
+    #navContainer #links ul li a:hover {
+      cursor: pointer;
+      color: #646464; }

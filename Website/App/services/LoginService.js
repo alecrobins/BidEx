@@ -50,4 +50,19 @@ app.service('loginService', ['$q', '$http', '$rootScope', '$timeout', function (
 		return true;
 	}
 
+	this.isUserWinner = function () {
+		//Assume true for the demo
+		return true;
+		// // Returns a promise
+		// return $http.post(base_url + '/isUserWinner/', user).
+		// 		  success(function(data, status, headers, config) {
+		// 		    // this callback will be called asynchronously
+		// 		    // when the response is available
+		// 		  }).
+		// 		  error(function(data, status, headers, config) {
+		// 		    // called asynchronously if an error occurs
+		// 		    // or server returns response with an error status.
+		// 		  });
+	}
+
 }]);

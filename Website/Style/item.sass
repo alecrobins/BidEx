@@ -22,11 +22,18 @@ $main-red: rgb(233,82,82)
 		// background: purple
 		min-height: 100%
 		padding: 0 2.5%
+		a
+			text-decoration: none
 		h2.title
 			color: $main-grey
 			font-size: 2.5em
 			font-weight: 600
 			display: block
+#feed-item
+	.item-info h2.title:hover
+		cursor: pointer
+	.item-picture img:hover
+		cursor: pointer
 
 .item-info-bid
 	table
@@ -34,7 +41,7 @@ $main-red: rgb(233,82,82)
 		margin-top: 2.5%
 		h1.bid
 			color: $main-green
-			font-size: 10vw
+			font-size: 8vw
 			font-weight: 700
 		.bit-button
 			vertical-align: middle
@@ -48,6 +55,9 @@ $main-red: rgb(233,82,82)
 			font-size: 1.5em
 			font-weight: 500
 			width: 100%
+		.bid-button button:hover
+			background: $main-green-alpha
+
 
 .item-info-details
 	table
@@ -176,3 +186,26 @@ $main-red: rgb(233,82,82)
 	#bid-history-title
 		background: rgb(242,242,242)
 		width: 100%
+
+.bid-history-title
+	width: 90%
+	background: rgb(240,240,240)
+	padding: 5% 5% 0% 5%
+
+.bid-history
+	table
+		width: 100%
+	tbody tr
+		background-color: rgb(245,245,245)
+	tbody tr:nth-child(odd)
+		background-color: rgb(249,249,249)
+	td
+		padding: 10px
+
+.payment-hide
+	display: none
+	opacity: 0
+
+.payment-show
+	display: block
+	opacity: 1

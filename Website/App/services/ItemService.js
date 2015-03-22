@@ -9,11 +9,11 @@ app.service('itemService', ['$q', '$http', '$rootScope', '$timeout', function ($
 	// Dummy items
 	var items = [{
 			"id": 1,
-			"title": "One Hour Conversation with Mark Zuckerburg",
+			"title": "One Hour Conversation with Mark Zuckerberg",
 			"featureImage": "Assets/Images/filler.png",
 			"currentBid": 2300,
 			"numOfBidders": 12,
-			"endTime":  new Date(2015, 11, 17, 13, 24, 0).getTime(),
+			"endTime":  new Date(2015, 3, 22, 8, 1, 0).getTime(),
 			"remainingTime": "0:59", // TODO: NEED TO REMOVE,
 			"bidInc": 100,
 			"topBidder": {

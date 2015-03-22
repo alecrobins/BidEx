@@ -84,3 +84,10 @@ POST /api/placeBid/:userId/:itemId
 }
 
 TODO: add a way to pass payments
+
+
+POST /api/sendToken/:json
+
+{
+	card: ObjectcardEntryMode: "E_COMMERCE"dateCreated: 1426982913306expMonth: 11expYear: 19id: "ddGk6pX5"last4: "5100"type: "MASTERCARD"__proto__: Objectid: "f052d466-c0ba-4ff4-a787-26ff5805bc1e"used: false
+}

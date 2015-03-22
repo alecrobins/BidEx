@@ -3,13 +3,16 @@
 var itemController = angular.module("app").controller('ItemController', ['$scope', '$route', '$routeParams', 'itemService', 'loginService', 'discussionService',
 function ($scope, $route, $routeParams, itemService, loginService, discussionService) {
 
-		$scope.test = "Hello World - item";
+		// determines if you can order a product or not
+		$scope.outcome = "Templates/winner.html";
 
 		$scope.item = $route.current.locals.getItemById;
 
 		$scope.currentComment = "";
 
 		$scope.currentUser = loginService.getCurrentUser();
+
+		$scope.paymentClass = "payment-hide";
 
 		// place a bid on the current item
 		$scope.placeBid = function () {
@@ -35,7 +38,7 @@ function ($scope, $route, $routeParams, itemService, loginService, discussionSer
 			// 			});
 		}
 
-		$scope.currentEndingTime = 	$scope.item.endTime;
+		$scope.currentEndingTime = 	$scope.item;
 
 		$scope.addComment = function () {
 			console.log("COMMENT :: ");
@@ -44,6 +47,21 @@ function ($scope, $route, $routeParams, itemService, loginService, discussionSer
 
 			// reset
 			$scope.currentComment = "";
+		}
+
+		$scope.timerFinished = function () {
+			if(loginService.isUserWinner()){
+				// Need to show payment
+				console.log("YOU WINN");
+				$scope.currentState = "Templates/winner.html";
+
+			}else{
+				console.log("YOU LOSE");
+				$scope.currentState = "Templates/loser.html";
+			}
+
+			$scope.paymentClass = "payment-show";
+			$scope.$apply();
 		}
 
 }]);

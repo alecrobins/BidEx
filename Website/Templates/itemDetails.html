@@ -1,62 +1,3 @@
-<div class="item-feature">
-	<div class="item-picture">
-		<img ng-src="{{item.featureImage}}" alt="" />
-	</div>
-
-	<div class="item-info">
-		<h2 class="title">{{item.title}}</h2>
-
-		<div class="item-info-bid">
-			<table>
-				<tr>
-					<td>
-						<h1 class="bid">{{item.currentBid | currency:"$":0}}</h1>
-					</td>
-					<td class="bid-button">
-						<button ng-really-message="Are you sure you want to place a bid?" ng-really-click="placeBid()">
-							BID <br />
-							+ {{item.bidInc}}
-						</button>
-					</td>
-				</tr>
-				<!-- Second row -->
-				<tr>
-					<td class="center-cell">TOP BID</td>
-					<td></td>
-				</tr>
-			</table>
-
-		</div>
-
-		<div class="item-info-details">
-
-			<table>
-				<tr>
-					<!-- TODO: Need to add a count down from the end date -->
-					<td class="item-remaining-time">
-						<timer countdown="10" interval="1000" custom="currentEndingTime" finish-callback="timerFinished()" >{{hours}}:{{minutes}}:{{seconds}}</timer>
-					</td>
-					<td class="item-bid-amount">{{item.numOfBidders}}</td>
-					<td class="item-top-bidder">
-						<img ng-src="{{item.topBidder.profile}}" alt="" />
-						<p>{{item.topBidder.username}}</p>
-					</td>
-				</tr>
-				<tr class="item-info-title">
-					<td class="center-cell">TIME LEFT</td>
-					<td class="center-cell">BIDDERS</td>
-					<td class="left-cell">TOP BIDDER</td>
-				</tr>
-			</table>
-
-		</div>
-
-
-	</div><!-- End of item-featue -->
-	<div class="clear"></div>
-
-</div>
-
 <div class="item-bottom">
 	<div class="discussion">
 		<h2 class="subheader">Discussion</h2>
@@ -110,6 +51,3 @@
 	</div><!-- End of bid-history -->
 
 </div>
-
-
-<div ng-include="outcome" class="{{paymentClass}}" ></div>
