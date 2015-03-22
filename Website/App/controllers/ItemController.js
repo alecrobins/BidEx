@@ -1,7 +1,7 @@
 'use strict';
 
-var itemController = angular.module("app").controller('ItemController', ['$scope', '$route', '$routeParams', 'itemService', 'loginService', 'discussionService',
-function ($scope, $route, $routeParams, itemService, loginService, discussionService) {
+var itemController = angular.module("app").controller('ItemController', ['$scope', '$route', '$location', '$routeParams', 'itemService', 'loginService', 'discussionService', 'paymentService',
+function ($scope, $route, $location, $routeParams, itemService, loginService, discussionService, paymentService) {
 
 		// determines if you can order a product or not
 		$scope.outcome = "Templates/winner.html";
@@ -50,18 +50,19 @@ function ($scope, $route, $routeParams, itemService, loginService, discussionSer
 		}
 
 		$scope.timerFinished = function () {
-			if(loginService.isUserWinner()){
-				// Need to show payment
-				console.log("YOU WINN");
-				$scope.currentState = "Templates/winner.html";
-
-			}else{
-				console.log("YOU LOSE");
-				$scope.currentState = "Templates/loser.html";
-			}
-
-			$scope.paymentClass = "payment-show";
+			// Need to show payment
+			console.log("YOU WINN");
+			$location.path("/item/" + $scope.item.id + "/complete");
 			$scope.$apply();
+			console.log("/item/" + $scope.item.id + "/complete");
+
+		}
+
+		$scope.token = "";
+
+		$scope.sendToken = function () {
+			console.log($scope.token);
+			paymentService.sendToken($scope.token, $scope.item);
 		}
 
 }]);

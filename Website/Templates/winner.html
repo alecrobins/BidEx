@@ -23,12 +23,15 @@ $(document).ready(function() {
       } else {
           // The token contains id, last4, and card type
           var token = data["id"];
+
           console.log("I RECIEVED THE TOKEN");
           console.log(token);
+
           // Insert the token into the form so it gets submitted to the server
           $paymentForm.append("<input type='hidden' name='simplifyToken' value='" + token + "' />");
           // Submit the form to the server
           $paymentForm.get(0).submit();
+
       }
   }
 
@@ -40,7 +43,6 @@ $(document).ready(function() {
     console.log("SIMPLE RETURNED");
     console.log(data);
   }
-
 
   $("#simplify-payment-form").on("submit", function() {
       // Disable the submit button
@@ -61,6 +63,7 @@ $(document).ready(function() {
 
   SimplifyCommerce.addMasterPassCheckoutButton("buy-with-masterpass-div", "sbpb_OGJiN2FhZWMtODI2Zi00MTc3LTkzMjYtMjJkMzc3YTAwYThj", masterPassResponseHandler,
       masterPassCanceledHandler);
+
 });
 
 </script>

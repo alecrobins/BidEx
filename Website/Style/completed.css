@@ -1,0 +1,20 @@
+.complete-info {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  border: solid 1px #f3f3f3;
+  background: #f7f7f7; }
+  .complete-info .winner {
+    color: white;
+    background: #3bf779;
+    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+    padding: 10px 0px 10px 10px; }
+  .complete-info table {
+    width: 100%; }
+    .complete-info table td {
+      width: 50%;
+      padding: 10px; }

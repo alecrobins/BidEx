@@ -33,9 +33,9 @@
     color: #3bf779;
     font-size: 8vw;
     font-weight: 700; }
-  .item-info-bid table .bit-button {
+  .item-info-bid table .bit-button, .item-info-bid table .closed-button {
     vertical-align: middle; }
-  .item-info-bid table .bid-button button {
+  .item-info-bid table .bid-button button, .item-info-bid table .closed-button button {
     -webkit-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
     border: none;
@@ -45,6 +45,8 @@
     font-size: 1.5em;
     font-weight: 500;
     width: 100%; }
+  .item-info-bid table .closed-button button {
+    background: #e6e6e6 !important; }
   .item-info-bid table .bid-button button:hover {
     background: rgba(59, 247, 121, 0.5); }
 

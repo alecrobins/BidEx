@@ -107,9 +107,9 @@ table {
     color: #3bf779;
     font-size: 8vw;
     font-weight: 700; }
-  .item-info-bid table .bit-button {
+  .item-info-bid table .bit-button, .item-info-bid table .closed-button {
     vertical-align: middle; }
-  .item-info-bid table .bid-button button {
+  .item-info-bid table .bid-button button, .item-info-bid table .closed-button button {
     -webkit-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
     border: none;
@@ -119,6 +119,8 @@ table {
     font-size: 1.5em;
     font-weight: 500;
     width: 100%; }
+  .item-info-bid table .closed-button button {
+    background: #e6e6e6 !important; }
   .item-info-bid table .bid-button button:hover {
     background: rgba(59, 247, 121, 0.5); }
 
@@ -285,6 +287,27 @@ table {
 .login-right {
   width: 50%;
   float: right; }
+
+.complete-info {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  border: solid 1px #f3f3f3;
+  background: #f7f7f7; }
+  .complete-info .winner {
+    color: white;
+    background: #3bf779;
+    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+    padding: 10px 0px 10px 10px; }
+  .complete-info table {
+    width: 100%; }
+    .complete-info table td {
+      width: 50%;
+      padding: 10px; }
 
 * {
   font-family: "Roboto", sans-serif !important;

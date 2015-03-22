@@ -9,7 +9,6 @@ factory('$logincheck', function () {
 
 // Create the app
 var app = angular.module('app', ['LoginCheck', 'ngRoute', 'ngAnimate', 'timer']);
-// var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
 // Configure the routes
 app.config(['$routeProvider', function ($routeProvider) {
@@ -45,8 +44,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 				// The completed page for an item
         .when('/item/:id/complete', {
-            templateUrl: 'Templates/item.html',
-            controller: 'ItemController',
+            templateUrl: 'Templates/complete.html',
+            controller: 'CompleteController',
+            resolve: {
+              getItemById: completeController.getItemById
+            }
         })
 
         .otherwise({
