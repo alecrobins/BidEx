@@ -41,7 +41,7 @@ public class PersonService implements IPersonService {
 		PaymentsApi.PRIVATE_KEY = "KychZDSxOO7RhkSXSirAbOw4O/xNS2ATM+aeKwThmcR5YFFQL0ODSXAOkNtXTToq";
 		System.out.println("1");
 		Payment payment = Payment.create(new PaymentsMap().set("amount", 1000)
-				.set("currency", "HKD")
+				.set("currency", "USD")
 				.set("description", "payment description")
 				.set("reference", "7a6ef6be31").set("token", tokenDTO.getId()));
 		System.out.println("2");
