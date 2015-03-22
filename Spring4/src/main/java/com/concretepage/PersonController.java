@@ -22,6 +22,7 @@ public class PersonController {
 	@RequestMapping("/getBid")
 	public BidDTO getBidDetail(
 			@RequestParam(value = "id", required = false, defaultValue = "0") Integer id) {
+		System.out.println("getBid");
 		BidDTO p = personService.getPersonDetail(id);
 		return p;
 	}
@@ -43,7 +44,9 @@ public class PersonController {
 	public LoginDTO chargeToken(@RequestBody TokenDTO tokenDTO) {
 		LoginDTO loginDTORet = new LoginDTO();
 		try {
+			System.out.println("Out1");
 			loginDTORet.setSuccess(personService.chargeToken(tokenDTO));
+			System.out.println("Out2");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
